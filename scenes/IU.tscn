@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnskvyb10kbwr"]
+[gd_scene load_steps=8 format=3 uid="uid://cydq6mb71qqdy"]
 
 [ext_resource type="Texture2D" uid="uid://cocei3vdi3ng0" path="res://assets/Heart.webp" id="1_kk64n"]
+[ext_resource type="Script" uid="uid://eowgof7qimt8" path="res://scenes/menu_pause.gd" id="2_x3uwg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7ch1"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -42,8 +43,10 @@ anchor_left = 0.07076923
 anchor_top = 0.16814159
 anchor_right = 0.30153847
 anchor_bottom = 0.84070796
+grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tdjga")
+metadata/_edit_use_anchors_ = true
 
 [node name="Heart" type="TextureRect" parent="PlayerHP/First Heart"]
 layout_mode = 1
@@ -99,6 +102,7 @@ texture = ExtResource("1_kk64n")
 expand_mode = 1
 
 [node name="Menu Pause" type="Panel" parent="."]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,6 +110,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wjhai")
+script = ExtResource("2_x3uwg")
 metadata/_edit_use_anchors_ = true
 
 [node name="Fond" type="Panel" parent="Menu Pause"]
@@ -118,7 +123,8 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wjhai")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel Pause" type="Panel" parent="Menu Pause"]
+[node name="PanelMenu" type="Panel" parent="Menu Pause"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3732639
@@ -132,13 +138,44 @@ grow_vertical = 2
 scale = Vector2(7.0142736, 11.440694)
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Menu Pause/Panel Pause"]
+[node name="ButtonReprendre" type="Button" parent="Menu Pause/PanelMenu"]
 layout_mode = 0
-offset_left = 4.562126
-offset_top = 3.4088838
-offset_right = 94.562126
-offset_bottom = 34.408882
+anchor_left = 0.11405315
+anchor_top = 0.085222095
+anchor_right = 0.88401186
+anchor_bottom = 0.2586852
+offset_right = 59.201653
+offset_bottom = 24.061474
 scale = Vector2(0.34220386, 0.22382337)
 theme_override_font_sizes/font_size = 16
 text = "Reprendre"
 flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonQuitter" type="Button" parent="Menu Pause/PanelMenu"]
+layout_mode = 0
+anchor_left = 0.106924795
+anchor_top = 0.42174014
+anchor_right = 0.8768835
+anchor_bottom = 0.5952033
+offset_right = 59.201653
+offset_bottom = 24.061474
+scale = Vector2(0.34220386, 0.22382337)
+theme_override_font_sizes/font_size = 16
+text = "Quitter"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonMainMenu" type="Button" parent="Menu Pause/PanelMenu"]
+layout_mode = 0
+anchor_left = 0.08910404
+anchor_top = 0.25129595
+anchor_right = 0.9018382
+anchor_bottom = 0.42475906
+offset_right = 57.490635
+offset_bottom = 24.061476
+scale = Vector2(0.34220386, 0.22382337)
+theme_override_font_sizes/font_size = 12
+text = "Menu Principal"
+flat = true
+metadata/_edit_use_anchors_ = true
