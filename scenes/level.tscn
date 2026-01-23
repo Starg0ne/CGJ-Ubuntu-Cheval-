@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://gkuidwu50df2"]
+[gd_scene load_steps=5 format=3 uid="uid://gkuidwu50df2"]
 
 [ext_resource type="Texture2D" uid="uid://dmse73bbdgro" path="res://assets/icon.svg" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://doqxsjnp2uwbe" path="res://scenes/player.tscn" id="2_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://blkgunxxcjkny" path="res://ennemie.tscn" id="3_w8frs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2q6dc"]
-size = Vector2(1151.5, 129)
+size = Vector2(1155.25, 126.5)
 
 [node name="Level" type="Node2D"]
 
 [node name="Floor" type="StaticBody2D" parent="."]
+collision_layer = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor"]
 position = Vector2(576.5, 581)
@@ -19,4 +21,26 @@ texture = ExtResource("1_2q6dc")
 position = Vector2(576.25, 582.5)
 shape = SubResource("RectangleShape2D_2q6dc")
 
+[node name="Floor2" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor2"]
+position = Vector2(1517.5, 460)
+scale = Vector2(9.0078125, 1)
+texture = ExtResource("1_2q6dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+position = Vector2(1517.375, 461.25)
+shape = SubResource("RectangleShape2D_2q6dc")
+
 [node name="Player" parent="." instance=ExtResource("2_w7c3h")]
+position = Vector2(147, 126)
+collision_mask = 254
+
+[node name="Ennemie" parent="." instance=ExtResource("3_w8frs")]
+position = Vector2(677, 229)
+collision_layer = 2
+
+[node name="Ennemie2" parent="." instance=ExtResource("3_w8frs")]
+position = Vector2(830, 167)
+collision_layer = 2
