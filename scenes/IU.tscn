@@ -1,0 +1,144 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnskvyb10kbwr"]
+
+[ext_resource type="Texture2D" uid="uid://cocei3vdi3ng0" path="res://assets/Heart.webp" id="1_kk64n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7ch1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdjga"]
+bg_color = Color(1, 0, 0.16862746, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kk64n"]
+bg_color = Color(1, 0, 0.16862746, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3uwg"]
+bg_color = Color(1, 0, 0.16862746, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjhai"]
+bg_color = Color(0, 0, 0, 0.13333334)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerHP" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026041666
+anchor_top = 0.032407407
+anchor_right = 0.3081597
+anchor_bottom = 0.20679012
+theme_override_styles/panel = SubResource("StyleBoxFlat_j7ch1")
+metadata/_edit_use_anchors_ = true
+
+[node name="First Heart" type="Panel" parent="PlayerHP"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07076923
+anchor_top = 0.16814159
+anchor_right = 0.30153847
+anchor_bottom = 0.84070796
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tdjga")
+
+[node name="Heart" type="TextureRect" parent="PlayerHP/First Heart"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kk64n")
+expand_mode = 1
+
+[node name="Second Heart" type="Panel" parent="PlayerHP"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3846154
+anchor_top = 0.16371681
+anchor_right = 0.61538464
+anchor_bottom = 0.8362832
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kk64n")
+metadata/_edit_use_anchors_ = true
+
+[node name="Heart" type="TextureRect" parent="PlayerHP/Second Heart"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kk64n")
+expand_mode = 1
+
+[node name="Third Heart" type="Panel" parent="PlayerHP"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.70153844
+anchor_top = 0.16814159
+anchor_right = 0.9323077
+anchor_bottom = 0.84070796
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x3uwg")
+
+[node name="Heart" type="TextureRect" parent="PlayerHP/Third Heart"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kk64n")
+expand_mode = 1
+
+[node name="Menu Pause" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wjhai")
+metadata/_edit_use_anchors_ = true
+
+[node name="Fond" type="Panel" parent="Menu Pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wjhai")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel Pause" type="Panel" parent="Menu Pause"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3732639
+anchor_top = 0.1558642
+anchor_right = 0.61681503
+anchor_bottom = 0.86207986
+offset_right = -240.57092
+offset_bottom = -417.62775
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7.0142736, 11.440694)
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Menu Pause/Panel Pause"]
+layout_mode = 0
+offset_left = 4.562126
+offset_top = 3.4088838
+offset_right = 94.562126
+offset_bottom = 34.408882
+scale = Vector2(0.34220386, 0.22382337)
+theme_override_font_sizes/font_size = 16
+text = "Reprendre"
+flat = true
