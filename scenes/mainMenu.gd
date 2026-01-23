@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	#Quand le bouton commencer est appuyé, on va aller sur la scéne level
 	if (commencer.button_pressed):
