@@ -8,7 +8,7 @@ var direction = 1  # 1 = droite, -1 = gauche
 @onready var player = $"../Player" 
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	velocity.x = direction * speed
 	velocity.y = 0
 	move_and_slide()

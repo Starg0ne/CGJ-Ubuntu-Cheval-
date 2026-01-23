@@ -1,0 +1,247 @@
+[gd_scene load_steps=9 format=3 uid="uid://cydq6mb71qqdy"]
+
+[ext_resource type="Texture2D" uid="uid://cocei3vdi3ng0" path="res://assets/Heart.webp" id="1_kk64n"]
+[ext_resource type="Script" uid="uid://eowgof7qimt8" path="res://scenes/menu_pause.gd" id="2_x3uwg"]
+[ext_resource type="Script" uid="uid://fhqptl70rjkp" path="res://scenes/mainMenu.gd" id="3_j7ch1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7ch1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdjga"]
+bg_color = Color(1, 0, 0.16862746, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kk64n"]
+bg_color = Color(1, 0, 0.16862746, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3uwg"]
+bg_color = Color(1, 0, 0.16862746, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjhai"]
+bg_color = Color(0, 0, 0, 0.13333334)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerHP" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026041666
+anchor_top = 0.032407407
+anchor_right = 0.3081597
+anchor_bottom = 0.20679012
+theme_override_styles/panel = SubResource("StyleBoxFlat_j7ch1")
+metadata/_edit_use_anchors_ = true
+
+[node name="FirstHeart" type="Panel" parent="PlayerHP"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07076923
+anchor_top = 0.16814159
+anchor_right = 0.30153847
+anchor_bottom = 0.84070796
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tdjga")
+metadata/_edit_use_anchors_ = true
+
+[node name="Heart" type="TextureRect" parent="PlayerHP/FirstHeart"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kk64n")
+expand_mode = 1
+
+[node name="SecondHeart" type="Panel" parent="PlayerHP"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3846154
+anchor_top = 0.16371681
+anchor_right = 0.61538464
+anchor_bottom = 0.8362832
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kk64n")
+metadata/_edit_use_anchors_ = true
+
+[node name="Heart" type="TextureRect" parent="PlayerHP/SecondHeart"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kk64n")
+expand_mode = 1
+
+[node name="ThirdHeart" type="Panel" parent="PlayerHP"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.70153844
+anchor_top = 0.16814159
+anchor_right = 0.9323077
+anchor_bottom = 0.84070796
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x3uwg")
+
+[node name="Heart" type="TextureRect" parent="PlayerHP/ThirdHeart"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kk64n")
+expand_mode = 1
+
+[node name="Menu Pause" type="Panel" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wjhai")
+script = ExtResource("2_x3uwg")
+metadata/_edit_use_anchors_ = true
+
+[node name="Fond" type="Panel" parent="Menu Pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wjhai")
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelMenu" type="Panel" parent="Menu Pause"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3732639
+anchor_top = 0.1558642
+anchor_right = 0.61681503
+anchor_bottom = 0.86207986
+offset_right = -240.57092
+offset_bottom = -417.62775
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7.0142736, 11.440694)
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonReprendre" type="Button" parent="Menu Pause/PanelMenu"]
+layout_mode = 0
+anchor_left = 0.11405315
+anchor_top = 0.085222095
+anchor_right = 0.88401186
+anchor_bottom = 0.2586852
+offset_right = 59.201653
+offset_bottom = 24.061474
+scale = Vector2(0.34220386, 0.22382337)
+theme_override_font_sizes/font_size = 16
+text = "Reprendre"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonQuitter" type="Button" parent="Menu Pause/PanelMenu"]
+layout_mode = 0
+anchor_left = 0.106924795
+anchor_top = 0.42174014
+anchor_right = 0.8768835
+anchor_bottom = 0.5952033
+offset_right = 59.201653
+offset_bottom = 24.061474
+scale = Vector2(0.34220386, 0.22382337)
+theme_override_font_sizes/font_size = 16
+text = "Quitter"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonMainMenu" type="Button" parent="Menu Pause/PanelMenu"]
+layout_mode = 0
+anchor_left = 0.08910404
+anchor_top = 0.25129595
+anchor_right = 0.9018382
+anchor_bottom = 0.42475906
+offset_right = 57.490635
+offset_bottom = 24.061476
+scale = Vector2(0.34220386, 0.22382337)
+theme_override_font_sizes/font_size = 12
+text = "Menu Principal"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOver" type="Panel" parent="."]
+process_mode = 3
+layout_mode = 0
+anchor_left = 0.19444445
+anchor_top = 0.30092594
+anchor_right = 0.79861116
+anchor_bottom = 0.7108025
+offset_top = -1.5258789e-05
+offset_right = -656.00006
+offset_bottom = -225.6
+scale = Vector2(17.400002, 6.6400003)
+script = ExtResource("3_j7ch1")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameOver"]
+layout_mode = 0
+anchor_left = 0.09626437
+anchor_top = 0.041415665
+anchor_right = 0.9164193
+anchor_bottom = 0.59522617
+offset_right = 108.1938
+offset_bottom = 17.84758
+scale = Vector2(0.23266807, 0.5538105)
+theme_override_font_sizes/normal_font_size = 26
+text = "Game Over"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonQuitter" type="Button" parent="GameOver"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.545977
+anchor_top = 0.5835843
+anchor_right = 1.3159357
+anchor_bottom = 0.7570475
+offset_right = 59.201653
+offset_bottom = 24.061474
+scale = Vector2(0.11310978, 0.37841403)
+theme_override_font_sizes/font_size = 16
+text = "Quitter"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonCommencer" type="Button" parent="GameOver"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.027717162
+anchor_top = 0.41243607
+anchor_right = 1.5476757
+anchor_bottom = 0.58589923
+offset_left = 5.5579796
+offset_top = 6.84593
+offset_right = 64.759636
+offset_bottom = 30.907402
+scale = Vector2(0.11310978, 0.37841403)
+theme_override_font_sizes/font_size = 16
+text = "Recommencer"
+flat = true
+metadata/_edit_use_anchors_ = true

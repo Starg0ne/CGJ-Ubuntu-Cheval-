@@ -4,10 +4,11 @@ class_name Player
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
 
+
 @export var vie: int = 3
 var invincible = false
-@onready var raycast2D = $RayCast2D
 
+@onready var raycast2D = $RayCast2D
 var mouse_pos: Vector2
 var pos_destination_x: float = 0.0
 var has_destination: bool = false
@@ -28,6 +29,7 @@ func _physics_process(delta: float) -> void:
 
 	# prépare le mouvement du joueur lors d'un click gauche
 	if Input.is_action_pressed("left click"):
+		
 		# prépare le raycast pour trouver la position
 		mouse_pos = get_global_mouse_position()
 		raycast2D.global_position = mouse_pos
@@ -50,11 +52,8 @@ func _physics_process(delta: float) -> void:
 			has_destination = false
 	else:
 		velocity.x = 0
-	
-	
-
+		
 	move_and_slide()
-	
 	
 func recevoir_degats(quantite):
 	if invincible == false:
@@ -63,11 +62,3 @@ func recevoir_degats(quantite):
 		invincible = true
 		await get_tree().create_timer(1.0).timeout
 		invincible = false
-	if vie <= 0:
-		mourir()
-	
-
-func mourir():
-	print("Game Over")
-	get_tree().reload_current_scene()
-	
