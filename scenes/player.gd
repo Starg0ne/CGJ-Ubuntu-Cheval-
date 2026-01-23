@@ -1,9 +1,11 @@
 extends CharacterBody2D
-
+class_name Player
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
 
+@export var vie: int = 3
+var invincible = false
 @onready var raycast2D = $RayCast2D
 
 var mouse_pos: Vector2
@@ -52,3 +54,20 @@ func _physics_process(delta: float) -> void:
 	
 
 	move_and_slide()
+	
+	
+func recevoir_degats(quantite):
+	if invincible == false:
+		vie -= quantite
+		print("Aïe ! Vie restante : ", vie)
+		invincible = true
+		await get_tree().create_timer(1.0).timeout
+		invincible = false
+	if vie <= 0:
+		mourir()
+	
+
+func mourir():
+	print("Game Over")
+	get_tree().reload_current_scene()
+	
