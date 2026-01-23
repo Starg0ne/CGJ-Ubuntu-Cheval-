@@ -34,13 +34,4 @@ position = Vector2(1517.375, 461.25)
 shape = SubResource("RectangleShape2D_2q6dc")
 
 [node name="Player" parent="." instance=ExtResource("2_w7c3h")]
-position = Vector2(147, 126)
-collision_mask = 254
-
-[node name="Ennemie" parent="." instance=ExtResource("3_w8frs")]
-position = Vector2(677, 229)
-collision_layer = 2
-
-[node name="Ennemie2" parent="." instance=ExtResource("3_w8frs")]
-position = Vector2(830, 167)
-collision_layer = 2
+position = Vector2(567, 350)
