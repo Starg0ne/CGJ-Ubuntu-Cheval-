@@ -329,12 +329,20 @@ theme_override_font_sizes/font_size = 40
 text = "ET"
 
 [node name="TutoText12" type="Label" parent="Level"]
-offset_left = 4662.0
-offset_top = 71.0
-offset_right = 5422.0
-offset_bottom = 172.0
-text = "Pour quitter le tutoriel,
+offset_left = 4741.0
+offset_top = 75.0
+offset_right = 5501.0
+offset_bottom = 176.0
+text = "Pour quitter le niveau,
 appuie sur le bouton Pause en haut à droite
 puis appuyer sur le bouton menu principal"
+
+[node name="TutoText13" type="Label" parent="Level"]
+offset_left = 4587.0
+offset_top = -4.0
+offset_right = 5347.0
+offset_bottom = 97.0
+theme_override_font_sizes/font_size = 40
+text = "Bien joué tu as réussi le niveau !"
 
 [connection signal="hit_player" from="Level/Ennemie" to="Level" method="_on_ennemie_hit_player"]
