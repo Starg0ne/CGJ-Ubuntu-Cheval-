@@ -1,12 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://cydq6mb71qqdy"]
+[gd_scene load_steps=15 format=3 uid="uid://cydq6mb71qqdy"]
 
 [ext_resource type="Texture2D" uid="uid://1khqwflkclvw" path="res://assets/vies.png" id="1_385kq"]
 [ext_resource type="Texture2D" uid="uid://btd1uixtld1ie" path="res://assets/pause.png" id="2_mmj0u"]
 [ext_resource type="Script" uid="uid://eowgof7qimt8" path="res://scenes/Menu_Pause.gd" id="2_x3uwg"]
 [ext_resource type="Texture2D" uid="uid://dyqrtimxbxs50" path="res://assets/continue.png" id="3_385kq"]
 [ext_resource type="Script" uid="uid://vpvm8ma8b5ng" path="res://scenes/game_over.gd" id="3_j7ch1"]
-[ext_resource type="Texture2D" uid="uid://d21c82bss827p" path="res://assets/quit.png" id="4_mmj0u"]
+[ext_resource type="Texture2D" uid="uid://jkksuoxgpyif" path="res://assets/quit.png" id="4_mmj0u"]
 [ext_resource type="Texture2D" uid="uid://oafybwmonejt" path="res://assets/game_over.png" id="6_dg3g1"]
+[ext_resource type="Texture2D" uid="uid://c3lusq7rxtmni" path="res://assets/menu.png" id="6_w52ls"]
 [ext_resource type="Texture2D" uid="uid://dvxdxbanjo2c2" path="res://assets/restart.png" id="7_w52ls"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7ch1"]
@@ -162,21 +163,6 @@ offset_bottom = 235.77629
 scale = Vector2(0.14378881, 0.07507122)
 texture_normal = ExtResource("3_385kq")
 
-[node name="ButtonMainMenu" type="Button" parent="Menu Pause/PanelMenu"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.10336069
-anchor_top = 0.43703642
-anchor_right = 1.0410949
-anchor_bottom = 0.6104995
-offset_right = 57.490635
-offset_bottom = 24.061474
-scale = Vector2(0.34220386, 0.22382337)
-theme_override_font_sizes/font_size = 12
-text = "Menu Principal"
-flat = true
-metadata/_edit_use_anchors_ = true
-
 [node name="ButtonQuitter" type="TextureButton" parent="Menu Pause/PanelMenu"]
 layout_mode = 0
 offset_left = 3.4215944
@@ -185,6 +171,15 @@ offset_right = 240.4216
 offset_bottom = 262.61032
 scale = Vector2(0.14448194, 0.071124725)
 texture_normal = ExtResource("4_mmj0u")
+
+[node name="ButtonMainMenu" type="TextureButton" parent="Menu Pause/PanelMenu"]
+layout_mode = 0
+offset_left = 2.993895
+offset_top = 11.712576
+offset_right = 239.9939
+offset_bottom = 248.71257
+scale = Vector2(0.14378881, 0.07507122)
+texture_normal = ExtResource("6_w52ls")
 
 [node name="clickDelayTimer" type="Timer" parent="Menu Pause"]
 wait_time = 0.6
