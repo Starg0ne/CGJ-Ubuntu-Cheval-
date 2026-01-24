@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fhqptl70rjkp" path="res://scenes/mainMenu.gd" id="1_qkhwq"]
 [ext_resource type="Texture2D" uid="uid://do2hia4ba22mx" path="res://assets/play.png" id="2_48ign"]
-[ext_resource type="Texture2D" uid="uid://cqm64xumu5uq7" path="res://assets/start_background.png" id="2_l7wge"]
+[ext_resource type="Texture2D" uid="uid://bs82i402xkfd7" path="res://assets/main_menu_background.png" id="2_l7wge"]
 [ext_resource type="Texture2D" uid="uid://jkksuoxgpyif" path="res://assets/quit.png" id="3_l7wge"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkhwq"]
@@ -26,26 +26,23 @@ script = ExtResource("1_qkhwq")
 
 [node name="TextureRect" type="TextureRect" parent="PanelMainMenu"]
 layout_mode = 0
-offset_left = -1114.0
-offset_top = -121.0
-offset_right = 1365.0
-offset_bottom = 664.0
+offset_left = 5.0
+offset_right = 1152.0
+offset_bottom = 648.0
 texture = ExtResource("2_l7wge")
-expand_mode = 1
-stretch_mode = 2
 
 [node name="ButtonCommencer" type="TextureButton" parent="PanelMainMenu"]
 layout_mode = 0
-offset_left = 375.0
-offset_top = 196.0
-offset_right = 612.0
-offset_bottom = 433.0
+offset_left = 77.0
+offset_top = 210.0
+offset_right = 314.0
+offset_bottom = 447.0
 texture_normal = ExtResource("2_48ign")
 
 [node name="ButtonQuitter" type="TextureButton" parent="PanelMainMenu"]
 layout_mode = 0
-offset_left = 377.0
-offset_top = 358.0
-offset_right = 614.0
-offset_bottom = 595.0
+offset_left = 74.0
+offset_top = 366.0
+offset_right = 311.0
+offset_bottom = 603.0
 texture_normal = ExtResource("3_l7wge")
