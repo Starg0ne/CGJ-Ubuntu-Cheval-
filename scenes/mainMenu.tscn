@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cylskv8mjbu1p"]
+[gd_scene load_steps=6 format=3 uid="uid://cylskv8mjbu1p"]
 
 [ext_resource type="Script" uid="uid://fhqptl70rjkp" path="res://scenes/mainMenu.gd" id="1_qkhwq"]
+[ext_resource type="Texture2D" uid="uid://cvsmn240hsxc8" path="res://assets/play.png" id="2_48ign"]
+[ext_resource type="Texture2D" uid="uid://cqm64xumu5uq7" path="res://assets/start_background.png" id="2_l7wge"]
+[ext_resource type="Texture2D" uid="uid://d21c82bss827p" path="res://assets/quit.png" id="3_l7wge"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkhwq"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7uy4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Control" type="Control"]
@@ -24,38 +24,28 @@ offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qkhwq")
 script = ExtResource("1_qkhwq")
 
-[node name="ButtonCommencer" type="Button" parent="PanelMainMenu"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 341.99997
-offset_top = 172.0
-offset_right = 447.99997
-offset_bottom = 198.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3.8670905, 3.6439185)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_c7uy4")
-text = "Commencer"
+[node name="TextureRect" type="TextureRect" parent="PanelMainMenu"]
+layout_mode = 0
+offset_left = -1114.0
+offset_top = -121.0
+offset_right = 1365.0
+offset_bottom = 664.0
+texture = ExtResource("2_l7wge")
+expand_mode = 1
+stretch_mode = 2
 
-[node name="ButtonQuitter" type="Button" parent="PanelMainMenu"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 336.0
-offset_top = 288.00003
-offset_right = 442.0
-offset_bottom = 314.00003
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3.8670905, 3.6439185)
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_c7uy4")
-text = "Quitter"
+[node name="ButtonCommencer" type="TextureButton" parent="PanelMainMenu"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 196.0
+offset_right = 612.0
+offset_bottom = 433.0
+texture_normal = ExtResource("2_48ign")
+
+[node name="ButtonQuitter" type="TextureButton" parent="PanelMainMenu"]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 358.0
+offset_right = 614.0
+offset_bottom = 595.0
+texture_normal = ExtResource("3_l7wge")

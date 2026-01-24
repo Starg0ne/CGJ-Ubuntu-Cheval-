@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c60gcwt2v0tdj"]
+
+[ext_resource type="Texture2D" uid="uid://dmse73bbdgro" path="res://assets/icon.svg" id="2_v62gn"]
+
+[sub_resource type="GDScript" id="GDScript_1emhw"]
+script/source = "extends CharacterBody2D
+
+# On crée des variables réglables dans l'inspecteur
+@export var speed = 150.0
+var direction = 1  # 1 = droite, -1 = gauche
+
+func _physics_process(_delta):
+	velocity.y = direction * speed
+	
+	move_and_slide()
+	
+	if (position.y > 500):
+		direction *= -1
+	elif (position.y < 0):
+		direction *= -1
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tc1c0"]
+
+[node name="plateformeDescendante" type="CharacterBody2D"]
+script = SubResource("GDScript_1emhw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v62gn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tc1c0")

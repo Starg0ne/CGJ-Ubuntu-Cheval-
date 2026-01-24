@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqbqv4yvad55a"]
+
+[ext_resource type="Script" uid="uid://ce3i8nubw505m" path="res://scenes/ennemie.gd" id="1_yb4ka"]
+[ext_resource type="Texture2D" uid="uid://bpb6et2rkfhip" path="res://assets/enemy_spritesheet.png" id="2_g88bl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfvwd"]
+atlas = ExtResource("2_g88bl")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81on0"]
+atlas = ExtResource("2_g88bl")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xpif"]
+atlas = ExtResource("2_g88bl")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27ag2"]
+atlas = ExtResource("2_g88bl")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wvydu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfvwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81on0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xpif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27ag2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xpif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81on0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yb4ka"]
+size = Vector2(62, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g88bl"]
+size = Vector2(66, 46)
+
+[node name="Ennemie" type="CharacterBody2D"]
+collision_layer = 4
+platform_floor_layers = 4294967292
+script = ExtResource("1_yb4ka")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wvydu")
+autoplay = "default"
+frame_progress = 0.1394579
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_yb4ka")
+
+[node name="hurtbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_g88bl")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(36, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-36, 0)
+
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

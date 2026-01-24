@@ -1,8 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cydq6mb71qqdy"]
+[gd_scene load_steps=14 format=3 uid="uid://cydq6mb71qqdy"]
 
-[ext_resource type="Texture2D" uid="uid://cocei3vdi3ng0" path="res://assets/Heart.webp" id="1_kk64n"]
-[ext_resource type="Script" uid="uid://eowgof7qimt8" path="res://scenes/menu_pause.gd" id="2_x3uwg"]
-[ext_resource type="Script" uid="uid://fhqptl70rjkp" path="res://scenes/mainMenu.gd" id="3_j7ch1"]
+[ext_resource type="Texture2D" uid="uid://1khqwflkclvw" path="res://assets/vies.png" id="1_385kq"]
+[ext_resource type="Texture2D" uid="uid://btd1uixtld1ie" path="res://assets/pause.png" id="2_mmj0u"]
+[ext_resource type="Script" uid="uid://eowgof7qimt8" path="res://scenes/Menu_Pause.gd" id="2_x3uwg"]
+[ext_resource type="Texture2D" uid="uid://dyqrtimxbxs50" path="res://assets/continue.png" id="3_385kq"]
+[ext_resource type="Script" uid="uid://vpvm8ma8b5ng" path="res://scenes/game_over.gd" id="3_j7ch1"]
+[ext_resource type="Texture2D" uid="uid://d21c82bss827p" path="res://assets/quit.png" id="4_mmj0u"]
+[ext_resource type="Texture2D" uid="uid://oafybwmonejt" path="res://assets/game_over.png" id="6_dg3g1"]
+[ext_resource type="Texture2D" uid="uid://dvxdxbanjo2c2" path="res://assets/restart.png" id="7_w52ls"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7ch1"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -50,14 +55,13 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_tdjga")
 metadata/_edit_use_anchors_ = true
 
 [node name="Heart" type="TextureRect" parent="PlayerHP/FirstHeart"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_kk64n")
+texture = ExtResource("1_385kq")
 expand_mode = 1
 
 [node name="SecondHeart" type="Panel" parent="PlayerHP"]
@@ -73,14 +77,13 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_kk64n")
 metadata/_edit_use_anchors_ = true
 
 [node name="Heart" type="TextureRect" parent="PlayerHP/SecondHeart"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_kk64n")
+texture = ExtResource("1_385kq")
 expand_mode = 1
 
 [node name="ThirdHeart" type="Panel" parent="PlayerHP"]
@@ -95,14 +98,13 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x3uwg")
 
 [node name="Heart" type="TextureRect" parent="PlayerHP/ThirdHeart"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_kk64n")
+texture = ExtResource("1_385kq")
 expand_mode = 1
 
 [node name="Menu Pause" type="Panel" parent="."]
@@ -118,6 +120,7 @@ script = ExtResource("2_x3uwg")
 metadata/_edit_use_anchors_ = true
 
 [node name="Fond" type="Panel" parent="Menu Pause"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -126,6 +129,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wjhai")
 metadata/_edit_use_anchors_ = true
+
+[node name="ButtonPause" type="TextureButton" parent="Menu Pause"]
+layout_mode = 0
+offset_left = 1016.0
+offset_top = -54.000015
+offset_right = 1253.0
+offset_bottom = 182.99998
+texture_normal = ExtResource("2_mmj0u")
 
 [node name="PanelMenu" type="Panel" parent="Menu Pause"]
 visible = false
@@ -142,55 +153,52 @@ grow_vertical = 2
 scale = Vector2(7.0142736, 11.440694)
 metadata/_edit_use_anchors_ = true
 
-[node name="ButtonReprendre" type="Button" parent="Menu Pause/PanelMenu"]
+[node name="ButtonReprendre" type="TextureButton" parent="Menu Pause/PanelMenu"]
 layout_mode = 0
-anchor_left = 0.11405315
-anchor_top = 0.085222095
-anchor_right = 0.88401186
-anchor_bottom = 0.2586852
-offset_right = 59.201653
-offset_bottom = 24.061474
-scale = Vector2(0.34220386, 0.22382337)
-theme_override_font_sizes/font_size = 16
-text = "Reprendre"
-flat = true
-metadata/_edit_use_anchors_ = true
-
-[node name="ButtonQuitter" type="Button" parent="Menu Pause/PanelMenu"]
-layout_mode = 0
-anchor_left = 0.106924795
-anchor_top = 0.42174014
-anchor_right = 0.8768835
-anchor_bottom = 0.5952033
-offset_right = 59.201653
-offset_bottom = 24.061474
-scale = Vector2(0.34220386, 0.22382337)
-theme_override_font_sizes/font_size = 16
-text = "Quitter"
-flat = true
-metadata/_edit_use_anchors_ = true
+offset_left = 2.993895
+offset_top = -1.223702
+offset_right = 239.9939
+offset_bottom = 235.77629
+scale = Vector2(0.14378881, 0.07507122)
+texture_normal = ExtResource("3_385kq")
 
 [node name="ButtonMainMenu" type="Button" parent="Menu Pause/PanelMenu"]
-layout_mode = 0
-anchor_left = 0.08910404
-anchor_top = 0.25129595
-anchor_right = 0.9018382
-anchor_bottom = 0.42475906
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.10336069
+anchor_top = 0.43703642
+anchor_right = 1.0410949
+anchor_bottom = 0.6104995
 offset_right = 57.490635
-offset_bottom = 24.061476
+offset_bottom = 24.061474
 scale = Vector2(0.34220386, 0.22382337)
 theme_override_font_sizes/font_size = 12
 text = "Menu Principal"
 flat = true
 metadata/_edit_use_anchors_ = true
 
+[node name="ButtonQuitter" type="TextureButton" parent="Menu Pause/PanelMenu"]
+layout_mode = 0
+offset_left = 3.4215944
+offset_top = 25.610334
+offset_right = 240.4216
+offset_bottom = 262.61032
+scale = Vector2(0.14448194, 0.071124725)
+texture_normal = ExtResource("4_mmj0u")
+
+[node name="clickDelayTimer" type="Timer" parent="Menu Pause"]
+wait_time = 0.6
+one_shot = true
+
 [node name="GameOver" type="Panel" parent="."]
 process_mode = 3
-layout_mode = 0
-anchor_left = 0.19444445
-anchor_top = 0.30092594
-anchor_right = 0.79861116
-anchor_bottom = 0.7108025
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21180555
+anchor_top = 0.23302472
+anchor_right = 0.81597227
+anchor_bottom = 0.6654451
 offset_top = -1.5258789e-05
 offset_right = -656.00006
 offset_bottom = -225.6
@@ -198,50 +206,29 @@ scale = Vector2(17.400002, 6.6400003)
 script = ExtResource("3_j7ch1")
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="GameOver"]
+[node name="ButtonQuitter" type="TextureButton" parent="GameOver"]
 layout_mode = 0
-anchor_left = 0.09626437
-anchor_top = 0.041415665
-anchor_right = 0.9164193
-anchor_bottom = 0.59522617
-offset_right = 108.1938
-offset_bottom = 17.84758
-scale = Vector2(0.23266807, 0.5538105)
-theme_override_font_sizes/normal_font_size = 26
-text = "Game Over"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-metadata/_edit_use_anchors_ = true
+offset_left = 20.114937
+offset_top = 24.999998
+offset_right = 257.11496
+offset_bottom = 262.0
+scale = Vector2(0.075616725, 0.13972823)
+texture_normal = ExtResource("4_mmj0u")
 
-[node name="ButtonQuitter" type="Button" parent="GameOver"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.545977
-anchor_top = 0.5835843
-anchor_right = 1.3159357
-anchor_bottom = 0.7570475
-offset_right = 59.201653
-offset_bottom = 24.061474
-scale = Vector2(0.11310978, 0.37841403)
-theme_override_font_sizes/font_size = 16
-text = "Quitter"
-flat = true
-metadata/_edit_use_anchors_ = true
+[node name="gameover" type="TextureRect" parent="GameOver"]
+layout_mode = 0
+offset_left = 2.0114942
+offset_top = -4.066265
+offset_right = 42.011494
+offset_bottom = 35.933735
+texture = ExtResource("6_dg3g1")
+expand_mode = 1
 
-[node name="ButtonCommencer" type="Button" parent="GameOver"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.027717162
-anchor_top = 0.41243607
-anchor_right = 1.5476757
-anchor_bottom = 0.58589923
-offset_left = 5.5579796
-offset_top = 6.84593
-offset_right = 64.759636
-offset_bottom = 30.907402
-scale = Vector2(0.11310978, 0.37841403)
-theme_override_font_sizes/font_size = 16
-text = "Recommencer"
-flat = true
-metadata/_edit_use_anchors_ = true
+[node name="ButtonRecommencer" type="TextureButton" parent="GameOver"]
+layout_mode = 0
+offset_left = 2.068965
+offset_top = 24.397589
+offset_right = 239.06897
+offset_bottom = 261.3976
+scale = Vector2(0.06580301, 0.1447506)
+texture_normal = ExtResource("7_w52ls")
