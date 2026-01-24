@@ -43,11 +43,15 @@ func _physics_process(delta: float) -> void:
 			else:
 				anim_sprite.play("default")
 	
-	if Input.is_action_just_released("middle click") and !currently_dragged:
+	if Input.is_action_just_released("middle click"):
 		mode_grappin = !mode_grappin
 		anim_sprite.play("grappin")
 		if !mode_grappin:
 			anim_sprite.play("default")
+			if currently_dragged:
+				currently_dragged = false
+				line.remove_point(1)
+				velocity = Vector2.ZERO
 	
 	# prépare le mouvement du joueur lors d'un click gauche
 	if Input.is_action_pressed("left click"):
