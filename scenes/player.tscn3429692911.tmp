@@ -112,14 +112,13 @@ size = Vector2(42, 56)
 disable_mode = 1
 collision_layer = 2
 collision_mask = 9
-platform_floor_layers = 4294967041
+platform_floor_layers = 4294967292
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fjrip")
 animation = &"grappin"
 autoplay = "default"
-frame_progress = 0.305144
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
@@ -132,9 +131,3 @@ target_position = Vector2(0, 64)
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
 position_smoothing_enabled = true
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(24, -4)
-
-[node name="Line2D" type="Line2D" parent="."]
-default_color = Color(18.892002, 8.715, 0, 1)

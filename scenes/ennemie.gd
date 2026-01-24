@@ -27,5 +27,5 @@ func _physics_process(delta):
 
 
 func _on_hurtbox_body_entered(body: Node2D) -> void:
-	if (body == player):
+	if body.has_method("recevoir_degats"):
 		hit_player.emit()
