@@ -117,13 +117,14 @@ script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fjrip")
+animation = &"grappin"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_g2els")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="RayCastMouvementSol" type="RayCast2D" parent="."]
 enabled = false
 target_position = Vector2(0, 64)
 
@@ -131,8 +132,10 @@ target_position = Vector2(0, 64)
 limit_left = 0
 position_smoothing_enabled = true
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="RayCastGrappin" type="RayCast2D" parent="."]
 position = Vector2(24, -4)
+enabled = false
 
 [node name="Line2D" type="Line2D" parent="."]
+position = Vector2(24, -4)
 default_color = Color(18.892002, 8.715, 0, 1)
