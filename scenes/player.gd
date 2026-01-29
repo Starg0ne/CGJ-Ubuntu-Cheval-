@@ -4,11 +4,8 @@ class_name Player
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
 
-enum type_grappin {SWING, DRAG}
-
 # statut du joueur
 @export var vie: int = 3
-@export var grappin: type_grappin = type_grappin.DRAG
 var invincible: bool = false
 var mode_grappin: bool = false
 var currently_dragged: bool = false
@@ -99,16 +96,15 @@ func _physics_process(delta: float) -> void:
 	
 	# gère le mouvement du joueur en fonction de sa position par rapport à la position de la destination
 	if currently_dragged:
-		line.set_point_position(1, destination_grappin-line.global_position)
+		line.set_point_position(1, destination_grappin-line.global_position) # mets à jour la ligne du grappin
 		
-		if grappin == type_grappin.DRAG:
-			# calcul la direction du grappin et change la velocité en fonction du résultat
-			velocity = Vector2(cos(line.get_point_position(1).angle())*SPEED, sin(line.get_point_position(1).angle())*SPEED)
-			var pos_dif_grappin = line.get_point_position(0) - line.get_point_position(1)
-			if pos_dif_grappin.x < 20 and pos_dif_grappin.x > -20 and pos_dif_grappin.y < 20 and pos_dif_grappin.y > -20:
-				currently_dragged = false
-				velocity = Vector2(0, 0)
-				line.remove_point(1)
+		# calcul la direction du grappin et change la velocité en fonction du résultat
+		velocity = Vector2(cos(line.get_point_position(1).angle())*SPEED, sin(line.get_point_position(1).angle())*SPEED)
+		var pos_dif_grappin = line.get_point_position(0) - line.get_point_position(1)
+		if pos_dif_grappin.x < 20 and pos_dif_grappin.x > -20 and pos_dif_grappin.y < 20 and pos_dif_grappin.y > -20:
+			currently_dragged = false
+			velocity = Vector2(0, 0)
+			line.remove_point(1)
 	
 	# déplacement classique
 	elif has_destination:
